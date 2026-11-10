@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6: Working with APIs</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <a href="#" class="logo">
+                <span class="logo-icon">✿</span>
+                PokéExplorer
+            </a>
+
+            <span class="header-label">YOUR PERSONAL POKÉDEX</span>
+        </header>
+
+
+        <!-- INTRODUCTION -->
+        <section class="intro">
+            <p class="eyebrow">WELCOME TO THE POKÉDEX</p>
+
+            <h1>Discover Your<br>
+                <span>Pokémon World</span>
+            </h1>
+
+            <p class="intro-description">
+                Explore Pokémon, discover their abilities,
+                and learn something new about every creature.
+            </p>
+        </section>
+
+
+        <!-- SEARCH SECTION -->
+        <section class="search-section">
+
+            <form id="searchForm" class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="pokemonInput"
+                    placeholder="Search by name or Pokédex number..."
+                    autocomplete="off"
+                >
+
+                <button type="submit" class="search-button">
+                    Search
+                </button>
+
+            </form>
+
+            <div class="search-actions">
+                <span>Not sure who to look for?</span>
+
+                <button id="randomButton" class="random-button">
+                    ✦ Surprise me!
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- LOADING MESSAGE -->
+        <div id="loading" class="message hidden">
+            <div class="pokeball-loader"></div>
+            <p>Finding your Pokémon...</p>
+        </div>
+
+
+        <!-- ERROR MESSAGE -->
+        <div id="errorMessage" class="error-message hidden">
+            Pokémon not found! Try another name or number.
+        </div>
+
+
+        <!-- POKEMON DISPLAY -->
+        <main id="pokemonDisplay" class="pokemon-container hidden">
+
+            <!-- POKEMON CARD -->
+            <section class="pokemon-card">
+
+                <div class="pokemon-top">
+                    <span class="pokemon-label">POKÉDEX ENTRY</span>
+                    <span id="pokemonId" class="pokemon-id">#0025</span>
+                </div>
+
+                <div class="pokemon-image-container">
+                    <div class="image-circle"></div>
+
+                    <img
+                        id="pokemonImage"
+                        src=""
+                        alt="Pokémon artwork"
+                    >
+                </div>
+
+                <div class="pokemon-information">
+
+                    <h2 id="pokemonName">PIKACHU</h2>
+
+                    <div id="pokemonTypes" class="pokemon-types">
+                    </div>
+
+                    <p id="pokemonDescription" class="pokemon-description">
+                        Discover your Pokémon!
+                    </p>
+
+                </div>
+
+                <button id="cryButton" class="cry-button">
+                    ♫ Play Pokémon Cry
+                </button>
+
+            </section>
+
+
+            <!-- DETAILS -->
+            <section class="details-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">GET TO KNOW YOUR POKÉMON</p>
+                        <h2>Pokémon details</h2>
+                    </div>
+                    <span class="flower-decoration">✿</span>
+                </div>
+
+
+                <!-- HEIGHT AND WEIGHT -->
+                <div class="detail-grid">
+
+                    <div class="detail-card">
+                        <span class="detail-icon">↕</span>
+                        <p>HEIGHT</p>
+                        <h3 id="pokemonHeight">0.4 m</h3>
+                    </div>
+
+                    <div class="detail-card">
+                        <span class="detail-icon">♡</span>
+                        <p>WEIGHT</p>
+                        <h3 id="pokemonWeight">6.0 kg</h3>
+                    </div>
+
+                </div>
+
+
+                <!-- ABILITIES -->
+                <div class="information-card">
+
+                    <h3>Abilities</h3>
+
+                    <div id="pokemonAbilities" class="abilities">
+                    </div>
+
+                </div>
+
+
+                <!-- BASE STATS -->
+                <div class="information-card stats-card">
+
+                    <div class="stats-heading">
+                        <div>
+                            <p class="eyebrow">POKÉMON PERFORMANCE</p>
+                            <h3>Base statistics</h3>
+                        </div>
+
+                        <span class="stats-icon">✧</span>
+                    </div>
+
+                    <div id="pokemonStats" class="stats-container">
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Made with ♡ for Pokémon lovers.</p>
+            <p>Powered by <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
